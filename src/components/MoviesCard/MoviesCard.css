@@ -1,0 +1,108 @@
+.movie__card {
+  margin: 0;
+  max-width: 360px;
+  background-color: #222222;
+  border-radius: 6px;
+}
+.movie__description {
+  display: flex;
+  justify-content: space-between;
+}
+.movie__image {
+  width: 100%;
+  height: auto;
+}
+.movie__title {
+  margin: 18px auto 18px 18px;
+  font-family: "Inter";
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.movie__duration {
+  margin: 18px 18px 18px auto;
+  font-family: "Inter";
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #8b8b8b;
+}
+.movie__button {
+  background-color: #313131;
+  width: 100px;
+  height: 29px;
+  margin: 15px 130px;
+  border-radius: 30px;
+  border: none;
+  font-family: "Inter";
+  font-size: 12px;
+  line-height: 11px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.movie__button_active {
+  background-color: #ee3465;
+  background-image: url(../../images/save6d.svg);
+  content: none;
+align-items: center;
+  justify-content: center; 
+  color: #ee3465;
+  font-size: 1px;
+}
+.movies__button_delete {
+  background-color: #313131;
+  width: 100px;
+  height: 29px;
+  margin: 18px 130px;
+  border-radius: 30px;
+  border: none;
+  color: #ffffff;
+}
+.movies__button_delete::after {
+  content: "\00d7";
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1279px) {
+  /* .movie__main {
+        max-width: 342px;
+        margin: 0;
+        padding: 0;
+    } */
+  .movie__card {
+    width: 342px;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    grid-gap: 24px 35px;
+  }
+  .movie__button {
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .movie__card {
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 24px 35px;
+  }
+  .movie__title {
+    margin: 14px auto 14px 14px;
+    font-size: 12px;
+  }
+  .movie__duration {
+    margin: 16px 16px 14px auto;
+    font-size: 10px;
+  }
+  .movie__button {
+    margin: 13px auto;
+  }
+}

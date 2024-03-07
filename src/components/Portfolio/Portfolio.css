@@ -1,0 +1,108 @@
+.portfolio {
+  max-width: 1280px;
+  margin: 0 auto 0 auto;
+  padding-top: 100px;
+  padding-bottom: 88px;
+  background-color: #202020;
+}
+.portfolio__title {
+  margin: 0 70px 0 70px;
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #8b8b8b;
+}
+.portfolio__links {
+  max-width: 1280px;
+  margin: 50px 70px 0 70px;
+}
+.portfolio__link {
+  max-width: 1140px;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 18px;
+  margin: 0 auto 20px 0;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #ffffff;
+}
+.portfolio__subtitle {
+  margin: 0;
+  font-family: "Inter";
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.portfolio__image {
+  width: 18px;
+  height: 35px;
+  padding: 0;
+  margin-top: 9px;
+  margin-right: 5px;
+}
+
+.portfolio__link:last-of-type {
+  border-bottom: none;
+}
+@media screen and (max-width: 768px) {
+  .portfolio {
+    max-width: 768px;
+    margin: 0 50px;
+    padding-top: 91px;
+    padding-bottom: 74px;
+  }
+  .portfolio__links {
+    max-width: 768px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .portfolio__title {
+    margin-left: 0;
+  }
+  .portfolio__link {
+    max-width: 668px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 18px;
+    margin: 0 auto 20px 0;
+  }
+  .portfolio__subtitle {
+    font-size: 28px;
+  }
+  .portfolio__image {
+    width: 18px;
+    height: 26px;
+    margin-top: 9px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .portfolio {
+    max-width: 100%;
+    margin: 0 14px 0 14px;
+    padding-top: 70px;
+    padding-bottom: 59px;
+  }
+  .portfolio__title {
+    font-size: 14px;
+    margin-left: 0;
+  }
+  .portfolio__links {
+    max-width: 100%;
+    margin: 40px auto 0;
+  }
+  .portfolio__link {
+    max-width: 100%;
+    margin: 0 auto 20px 0;
+    padding-bottom: 17px;
+  }
+  .portfolio__subtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .portfolio__image {
+    width: 10px;
+    height: 18px;
+    margin-top: 0;
+  }
+}

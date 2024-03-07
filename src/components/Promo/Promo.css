@@ -1,0 +1,128 @@
+.promo {
+  max-width: 100%;
+  background-color: #073042;
+  margin: 0 auto;
+}
+.promo__container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 70px;
+  max-width: 1140px;
+  padding-bottom: 13px;
+}
+.promo__info {
+  margin: 75px 0 72px 0;
+}
+.promo__title {
+  margin: 0 auto 36px;
+  color: #ffffff;
+  font-family: "Inter";
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+}
+.promo__subtitle {
+  margin: 0 auto 153px 0;
+  max-width: 310px;
+  color: #ffffff;
+  opacity: 50%;
+  font-family: "Inter";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.promo__link {
+  width: 129px;
+  margin: 0 auto 25px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.promo__image {
+  margin: 75px 0;
+  width: 310px;
+  height: 304px;
+}
+@media screen and (max-width: 768px) {
+  br:nth-of-type(2) {
+    display: none;
+  }
+  .promo__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 768px;
+  }
+  .promo__info {
+    margin: 0 auto 75px auto;
+    order: 2;
+    text-align: center;
+  }
+  .promo__image {
+    order: 1;
+    width: 310px;
+    height: 304px;
+    margin: 140px auto 48px auto;
+  }
+  .promo__title {
+    margin: 0 0 22px 0;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0;
+  }
+  .promo__subtitle {
+    margin: 0 auto 99px;
+    max-width: 260px;
+  }
+  .promo__link {
+    width: 129px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  br:nth-of-type(2) {
+    display: none;
+  }
+  br:nth-of-type(1) {
+    display: none;
+  }
+  .promo__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  .promo__info {
+    margin: 0 auto 25px auto;
+    order: 2;
+    text-align: center;
+  }
+  .promo__image {
+    order: 1;
+    width: 210px;
+    height: 206px;
+    margin: 70px auto 44px auto;
+  }
+  .promo__title {
+    margin: 0 0 24px 0;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38px;
+  }
+  .promo__subtitle {
+    margin: 0 auto 90px;
+  }
+  .promo__link {
+    width: 129px;
+    margin: 0 auto;
+  }
+}

@@ -1,1 +1,2 @@
-# movies-explorer-frontendd
+Этап 3: верстка и JSX
+Макет: dark-4

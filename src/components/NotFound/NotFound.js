@@ -2,15 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NotFound.css";
 
-function NotFound() {
+const NotFound = ({ onReturn }) => {
   return (
-    <section className="notfound">
-      <h2 className="notfound__title">404</h2>
-      <p className="notfound__description">Страница не найдена</p>
-      <Link to="/" className="notfound__button">
-        Назад
-      </Link>
-    </section>
+    <>
+      <main>
+        <section className="notfound page">
+          <h1 className="notfound__title">404</h1>
+          <p className="notfound__description">Страница не найдена</p>
+          <Link to="/" className="notfound__button" onClick={onReturn}>
+            Назад
+          </Link>
+        </section>
+      </main>
+    </>
   );
 }
 

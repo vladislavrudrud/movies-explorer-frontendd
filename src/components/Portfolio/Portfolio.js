@@ -7,10 +7,12 @@ export default function Portfolio() {
     <>
       <section className="portfolio">
         <h2 className="portfolio__title">Портфолио</h2>
-        <nav className="portfolio__links">
+        <ul className="portfolio__links">
           <a
             className="portfolio__link"
             href="https://github.com/vladislavrudrud"
+            target="_blank"
+            rel="noreferrer"
           >
             <h3 className="portfolio__subtitle">Статичный сайт</h3>
             <img className="portfolio__image" src={icon} alt="Иконка" />
@@ -18,6 +20,8 @@ export default function Portfolio() {
           <a
             className="portfolio__link"
             href="https://github.com/vladislavrudrud"
+            target="_blank"
+            rel="noreferrer"
           >
             <h3 className="portfolio__subtitle">Адаптивный сайт</h3>
             <img className="portfolio__image" src={icon} alt="Иконка" />
@@ -25,11 +29,14 @@ export default function Portfolio() {
           <a
             className="portfolio__link"
             href="https://github.com/vladislavrudrud"
+            target="_blank"
+            rel="noreferrer"
+
           >
             <h3 className="portfolio__subtitle">Одностраничное приложение</h3>
             <img className="portfolio__image" src={icon} alt="Иконка" />
           </a>
-        </nav>
+        </ul>
       </section>
     </>
   );

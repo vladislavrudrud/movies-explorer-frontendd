@@ -1,14 +1,14 @@
 .techs {
   color: white;
-  max-width: 100%;
+  max-width: 1280px;
   background-color: #272727;
   margin: 0 auto;
-  padding-bottom: 100px;
+  padding-bottom: 98px;
   padding-top: 100px;
 }
 .techs__title {
   max-width: 1140px;
-  margin: 0 70px 90px 70px;
+  margin: 2px 70px 90px 70px;
   border-bottom: 1px solid #dadada;
   padding-bottom: 23px;
   font-family: "Inter";
@@ -21,6 +21,7 @@
   margin: 0 auto 76px auto;
   display: flex;
   flex-direction: column;
+  justify-items: center;
   align-items: center;
 }
 .techs__text {
@@ -51,6 +52,7 @@
   justify-content: center;
   gap: 10px;
   align-items: center;
+  padding: 0;
 }
 .techs__type {
   width: 90px;
@@ -96,6 +98,15 @@
     height: 57px;
     font-size: 12px;
     line-height: 14px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .techs__types {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    justify-items: center;
+    align-items: center;
   }
 }
 @media screen and (max-width: 500px) {

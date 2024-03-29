@@ -63,33 +63,38 @@
   color: #ffffff;
 }
 .login__button {
-  margin: 210px 0 0 0;
+  margin: 194px 0 0 0;
   background-color: #4285f4;
   border-radius: 3px;
   font-family: "Inter";
   font-size: 14px;
-  line-height: 17px;
+  line-height: 16px;
   font-weight: 500;
   color: #ffffff;
   height: 45px;
+  border: 3px solid #4285f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
 }
 .login__subtitle {
-  margin: 6px auto 0 auto;
+  margin: 9px auto 0 auto;
   display: flex;
   justify-content: center;
   color: #8b8b8b;
   font-family: "Inter";
   font-size: 14px;
-  line-height: 17px;
+  line-height: 16px;
   font-weight: 400;
 }
 .login__link {
-  margin: 0 0 0 6px;
+  margin: 0 0 0 7px;
   color: #4285f4;
   text-decoration: none;
   font-family: "Inter";
   font-size: 14px;
-  line-height: 17px;
+  line-height: 16px;
   font-weight: 400;
 }
 /* .login__error {
@@ -112,7 +117,7 @@
     margin: 232px auto 37px 0;
   }
   .login__button {
-    margin: 210px 0 0 0;
+    margin: 193px 0 0 0;
   }
   .login__subtitle {
     margin: 9px auto 232px auto;
@@ -143,14 +148,15 @@
   }
   .login__button {
     width: 260px;
-    margin: 300px auto 0 auto;
+    margin: 283px auto 0 auto;
     font-size: 12px;
     line-height: 14px;
-    height: 40px;
+    height: 45px;
   }
   .login__subtitle {
     font-size: 12px;
     line-height: 15px;
+    margin-top: 6px;
   }
   .login__link {
     font-family: "Inter";

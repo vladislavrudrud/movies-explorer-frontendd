@@ -13,15 +13,15 @@ export default function Techs() {
             дипломном проекте.
           </p>
         </div>
-        <div className="techs__types">
-          <p className="techs__type">HTML</p>
-          <p className="techs__type">CSS</p>
-          <p className="techs__type">JS</p>
-          <p className="techs__type">React</p>
-          <p className="techs__type">Git</p>
-          <p className="techs__type">Express.js</p>
-          <p className="techs__type">mongoDB</p>
-        </div>
+        <ul className="techs__types">
+          <li className="techs__type">HTML</li>
+          <li className="techs__type">CSS</li>
+          <li className="techs__type">JS</li>
+          <li className="techs__type">React</li>
+          <li className="techs__type">Git</li>
+          <li className="techs__type">Express.js</li>
+          <li className="techs__type">mongoDB</li>
+        </ul>
       </section>
     </>
   );

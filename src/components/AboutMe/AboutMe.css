@@ -112,6 +112,13 @@
     height: 307px;
   }
 }
+@media screen and (max-width: 726px) {
+  .aboutme__image {
+    width: 245px;
+    height: 295px;
+    margin-left: 10px;
+  }
+}
 @media screen and (max-width: 500px) {
   .aboutme {
     max-width: 100%;

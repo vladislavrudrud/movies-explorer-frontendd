@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Movies from "../Movies/Movies";
 import Main from "../Main/Main";
 import SavedMovies from "../SavedMovies/SavedMovies";
@@ -8,18 +8,22 @@ import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import NotFound from "../NotFound/NotFound";
 import Layout from "../Layout/Layout";
-import Promo from "../Promo/Promo";
 import "./App.css";
 
 function App() {
+
+  const navigate = useNavigate();
+
+  const clickBack = () => {
+    navigate(-1);
+  }
   return (
     <Routes>
       <Route
         element={
           <Layout
             isMain={true}
-            isLogged={false}
-            banner={<Promo />}
+            isLogged={true}
             showFooter={true}
           />
         }
@@ -33,7 +37,7 @@ function App() {
       </Route>
       <Route path="/signin" element={<Login />} />
       <Route path="/signup" element={<Register />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<NotFound onReturn={clickBack}/>} />
     </Routes>
   );
 }

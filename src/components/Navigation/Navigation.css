@@ -43,7 +43,7 @@
 @media screen and (max-width: 768px) {
   .navigation__menu {
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     background-color: #202020;
@@ -113,7 +113,7 @@
     background-repeat: no-repeat;
   }
   .navigation__button_last {
-    margin: 599px auto auto auto;
+    margin: 595px auto auto auto;
     display: flex;
     justify-content: space-between;
     width: 100px;

@@ -13,13 +13,17 @@ export default function Footer() {
           <nav className="footer__links">
             <a
               className="footer__link"
-              href="https://github.com/vladislavrudrud"
+              href="https://practicum.yandex.ru"
+              target="_blank"
+              rel="noreferrer"
             >
               Яндекс.Практикум
             </a>
             <a
               className="footer__link"
               href="https://github.com/vladislavrudrud"
+              target="_blank"
+              rel="noreferrer"
             >
               Github
             </a>

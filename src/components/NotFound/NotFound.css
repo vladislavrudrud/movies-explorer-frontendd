@@ -47,23 +47,21 @@
         margin: 0 auto 222px auto;
     }
   } */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .notfound__title {
-    max-width: 300px;
-    margin: 329px auto 10px auto;
-    font-size: 80px;
-    line-height: 97px;
+    max-width: 400px;
+    margin: 408px auto 5px auto;
+    font-size: 140px;
+    line-height: 169px;
   }
   .notfound__button {
-    margin: 0 auto 30px auto;
+    margin: 0 auto 222px auto;
   }
   .notfound__description {
-    max-width: 300px;
-    margin: 0 auto 284px auto;
-    font-size: 12px;
-    line-height: 14px;
-    font-size: 12px;
-    line-height: 14px;
+    max-width: 400px;
+    margin: 0 auto 184px auto;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 @media screen and (max-width: 500px) {

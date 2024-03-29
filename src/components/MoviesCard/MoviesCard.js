@@ -14,7 +14,7 @@ const MoviesCard = ({
   const { pathname } = useLocation();
 
   return (
-    <div className="movie__card">
+    <li className="movie__card">
       <div className="movie__card_container">
         <div className="movie__description">
           <h5 className="movie__title">{title}</h5>
@@ -39,7 +39,7 @@ const MoviesCard = ({
           />
         )}
       </div>
-    </div>
+    </li>
   );
 };
 

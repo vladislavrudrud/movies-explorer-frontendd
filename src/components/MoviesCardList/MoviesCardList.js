@@ -32,7 +32,7 @@ export default function MoviesCardList({ movies, deleteMovies }) {
   return (
     <>
       <section className="movies__cards">
-        <div className="movies__cards_list">
+        <ul className="movies__cards_list">
           {isLoading && preloader}
           {!isLoading &&
             Array.isArray(movies) &&
@@ -48,7 +48,7 @@ export default function MoviesCardList({ movies, deleteMovies }) {
                 isSelected={isMovies.has(movie.id)}
               />
             ))}
-        </div>
+        </ul>
         <button className="movies__button" type="button">
           Ещё
         </button>

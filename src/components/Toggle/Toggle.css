@@ -1,0 +1,95 @@
+.toggle {
+    max-width: 1280px;
+    cursor: pointer;
+    display: inline-block;
+  }
+.toggle_container {
+    max-width: 1140px;
+    margin: 0 70px;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 44px;
+}
+  .toggle__switch {
+    display: inline-block;
+    background: #3ddc84;
+    border-radius: 20px;
+    width: 36px;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+  }
+  .toggle__switch:before,
+  .toggle__switch:after {
+    content: "";
+  }
+  .toggle__switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    transition: left 0.25s;
+  }
+  .toggle:hover .toggle__switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  }
+  .toggle__input:checked + .toggle__switch {
+    background: #3ddc84;
+  }
+  .toggle__input:checked + .toggle__switch:before {
+    left: 22px;
+  }
+  
+  .toggle__input {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .toggle__span {
+    margin-left: 14px;
+    position: relative;
+    top: 1px;
+    font-family: "Inter";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 768px) {
+    .toggle {
+      max-width: 1140px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .toggle_container {
+      max-width: 708px;
+      margin: 0 30px;
+      border-bottom: 1px solid #424242;
+      padding-bottom: 49px;
+  }
+  }
+  @media screen and (max-width: 500px) {
+    .toggle {
+      cursor: pointer;
+      display: inline-block;
+    }
+    .toggle_container {
+      margin: 0;
+      border-bottom: 1px solid #424242;
+      padding-bottom: 66px;
+  }
+    .toggle__span {
+      font-size: 11px;
+      line-height: 18px;
+    }
+    .toggle {
+      padding-bottom: 64px;
+    }
+  }
+  

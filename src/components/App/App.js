@@ -23,7 +23,7 @@ function App() {
         element={
           <Layout
             isMain={true}
-            isLogged={true}
+            isLogged={false}
             showFooter={true}
           />
         }

@@ -8,19 +8,19 @@ export default function AboutProject() {
         <h2 className="project__title">О проекте</h2>
         <div className="project__container">
           <div className="project__container-text">
-            <h3 className="project__container-title">
+            <h3 className="project__container-text-title">
               Дипломный проект включал 5 этапов
             </h3>
-            <p className="project__container-description">
+            <p className="project__container-text-description">
               Составление плана, работу над бэкендом, вёрстку, добавление
               функциональности и финальные доработки.
             </p>
           </div>
-          <div className="project__container-text project__container_last">
-            <h3 className="project__container-title">
+          <div className="project__container-text project__container-text_last">
+            <h3 className="project__container-text-title">
               На выполнение диплома ушло 5 недель
             </h3>
-            <p className="project__container-description">
+            <p className="project__container-text-description">
               У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было
               соблюдать, чтобы успешно защититься.
             </p>

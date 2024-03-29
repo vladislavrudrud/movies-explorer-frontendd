@@ -102,10 +102,12 @@
 }
 @media screen and (max-width: 767px) {
   .techs__types {
+    max-width: 178px;
+    margin: 0 auto 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px 10px;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
   }
 }

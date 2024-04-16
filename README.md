@@ -1,3 +1,2 @@
-"https://github.com/vladislavrudrud/movies-explorer-frontendd/pull/2"
-"kolos.nomoredomainswork.ru"
+Ссылки:https://github.com/vladislavrudrud/movies-explorer-frontendd/pull/2 kolos.nomoredomainswork.ru
 

@@ -12,6 +12,10 @@
   justify-content: space-between;
   height: 74px;
 }
+.header__btn-container_blok {
+  display: flex;
+  gap: 73px;
+}
 .header__logo {
   width: 38px;
   height: 38px;
@@ -32,6 +36,9 @@
   font-weight: 400;
   display: flex;
   align-items: center;
+}
+.header__button:hover {
+  opacity: 80%;
 }
 .header__btn_signin {
   border-radius: 3px;

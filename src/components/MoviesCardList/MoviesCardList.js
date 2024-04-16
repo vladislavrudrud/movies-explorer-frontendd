@@ -1,57 +1,101 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Preloader from "../Preloader/Preloader";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 
-export default function MoviesCardList({ movies, deleteMovies }) {
-  const [isMovies, setIsMovies] = useState(new Set());
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
-  function handleStatus(id) {
-    setIsMovies((movies) => {
-      const newSet = new Set(movies);
-      if (newSet.has(id)) {
-        newSet.delete(id);
+export default function MoviesCardList({
+  movies,
+  cardDelete,
+  savedFilms,
+  isLoading,
+  isNotFound,
+  handleSave,
+  savedMovies,
+}) {
+  const [isRenderedMovies, setIsRenderedMovies] = useState(0);
+  function addingCard() {
+    setIsRenderedMovies((prevRenderedMovies) => {
+      const display = window.innerWidth;
+      if (display > 1278) {
+        return prevRenderedMovies + 3;
+      } else if (display > 767) {
+        return prevRenderedMovies + 2;
       } else {
-        newSet.add(id);
+        return prevRenderedMovies + 1;
       }
-      return newSet;
     });
   }
-  function handleDelete(id) {
-    deleteMovies && deleteMovies(id);
+
+  const quantityCard = useCallback(() => {
+    const display = window.innerWidth;
+    let count = 0;
+
+    if (display > 1278) {
+      count = 12;
+    } else if (display > 767) {
+      count = 8;
+    } else {
+      count = 5;
+    }
+
+    setIsRenderedMovies(count);
+  }, [setIsRenderedMovies]);
+
+  useEffect(() => {
+    quantityCard();
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setTimeout(() => {
+        quantityCard();
+      }, 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [quantityCard]);
+
+  function findSavedMovieByCardId(savedMovies, card) {
+    const { id } = card;
+    return savedMovies.find((savedMovie) => savedMovie.movieId === id);
   }
-  const preloader = [...new Array(3)].map((element, index) => (
-    <Preloader key={index} />
-  ));
+
   return (
     <>
       <section className="movies__cards">
         <ul className="movies__cards_list">
-          {isLoading && preloader}
+          {isLoading && <Preloader />}
+          {isNotFound && !isLoading && (
+            <span className="movies__errors">Ничего не найдено</span>
+          )}
           {!isLoading &&
             Array.isArray(movies) &&
-            movies.map((movie) => (
-              <MoviesCard
-                key={movie.id}
-                id={movie.id}
-                title={movie.title}
-                image={movie.image}
-                duration={movie.duration}
-                onSelect={() => handleStatus(movie.id)}
-                onDelete={(id) => handleDelete(movie.id)}
-                isSelected={isMovies.has(movie.id)}
-              />
-            ))}
+            movies
+              .slice(0, isRenderedMovies)
+              .map((movie) => (
+                <MoviesCard
+                  key={savedFilms ? movie._id : movie.id}
+                  saved={findSavedMovieByCardId(savedMovies, movie)}
+                  cards={movies}
+                  card={movie}
+                  savedFilms={savedFilms}
+                  savedMovies={savedMovies}
+                  handleSave={handleSave}
+                  cardDelete={cardDelete}
+                />
+              ))}
         </ul>
-        <button className="movies__button" type="button">
-          Ещё
-        </button>
+        {movies.length > isRenderedMovies ? (
+          <button className="movies__button" type="button" onClick={addingCard}>
+            Ещё
+          </button>
+        ) : (
+          ""
+        )}
       </section>
     </>
   );

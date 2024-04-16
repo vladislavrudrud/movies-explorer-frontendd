@@ -13,10 +13,10 @@ export default function Layout({ banner, isMain, isLogged, showFooter }) {
       <Header isDark={isMain} isLogged={isLogged} />
       {banner && banner}
       <div className="page">
-          <main>
-            {}
-            <Outlet />
-          </main>
+        <main>
+          {}
+          <Outlet />
+        </main>
       </div>
       {!isProfilePage && showFooter && <Footer />}
     </div>

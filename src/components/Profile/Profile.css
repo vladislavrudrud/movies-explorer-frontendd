@@ -75,6 +75,13 @@
   line-height: 16px;
   color: #ffffff;
 }
+.profile__edit:disabled {
+  color: grey;
+  cursor: not-allowed;
+}
+.profile__edit:hover {
+  opacity: 80%;
+}
 .profile__logout {
   margin: 16px auto 0 auto;
   text-align: center;
@@ -87,6 +94,9 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+.profile__logout:hover {
+  opacity: 80%;
 }
 /* .profile__error {
     margin: 20px;

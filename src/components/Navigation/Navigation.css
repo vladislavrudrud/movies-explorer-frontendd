@@ -13,6 +13,12 @@
   font-weight: 400;
   text-decoration: none;
 }
+.navigation__link:hover {
+  opacity: 80%;
+}
+.navigation__link_active {
+  font-weight: 500;
+}
 .navigation__profile {
   margin: auto 0;
   color: #ffffff;
@@ -22,6 +28,9 @@
   font-weight: 50;
   text-decoration: none;
   justify-content: center;
+}
+.navigation__profile:hover {
+  opacity: 80%;
 }
 .navigation__text {
   margin: auto;
@@ -145,6 +154,12 @@
     background-color: #202020;
     width: 100%;
     margin: 0 0 0 auto;
+  }
+  .navi__item:hover {
+  cursor: pointer;
+  }
+  .navigation__button_last {
+    cursor: pointer;
   }
   .navigation__list {
     margin: 0;

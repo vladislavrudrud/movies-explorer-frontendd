@@ -7,20 +7,28 @@ export default function Navigation({ isDark, isOpen, onClose }) {
   return (
     <>
       <div className="navigation__links">
-        <Link
+        <NavLink
           to="/movies"
-          className="navigation__link"
+          className={({ isActive }) =>
+            isActive
+              ? "navigation__link navigation__link_active"
+              : "navigation__link"
+          }
         >
           Фильмы
-        </Link>
-        <Link to="/saved-movies" className="navigation__link">
+        </NavLink>
+        <NavLink
+          to="/saved-movies"
+          className={({ isActive }) =>
+            isActive
+              ? "navigation__link navigation__link_active"
+              : "navigation__link"
+          }
+        >
           Сохраненные фильмы
-        </Link>
+        </NavLink>
       </div>
-      <Link
-        to="/profile"
-        className="navigation__links navigation__profile"
-      >
+      <Link to="/profile" className="navigation__links navigation__profile">
         <p className="navigation__text">Аккаунт</p>
         <img className="navigation__image" alt="меню" src={men} />
       </Link>
@@ -31,7 +39,7 @@ export default function Navigation({ isDark, isOpen, onClose }) {
             <div className="navigation__list">
               <button className="navigation__close" onClick={onClose}></button>
               <nav className="navi__link">
-                <NavLink exact to="/" className="navi__item">
+                <NavLink to="/" className="navi__item">
                   Главная
                 </NavLink>
                 <NavLink to="/movies" className="navi__item">
@@ -40,10 +48,7 @@ export default function Navigation({ isDark, isOpen, onClose }) {
                 <NavLink to="/saved-movies" className="navi__item">
                   Сохранённые фильмы
                 </NavLink>
-                <Link
-                  to="/profile"
-                  className="navigation__button_last"
-                >
+                <Link to="/profile" className="navigation__button_last">
                   <p className="navigation__text">Аккаунт</p>
                   <img className="navigation__image" alt="меню" src={men} />
                 </Link>

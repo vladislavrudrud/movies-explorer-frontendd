@@ -1,26 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Validation from "../../utils/Validation";
 import "./Register.css";
 import logo from "../../images/logo.svg";
 
-export default function Register() {
-  const { isError, isValue, isValid, handleChangeInput } = Validation();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!isValid) {
-      return;
+export default function Register({ onRegister }) {
+  const { isError, isValue, isValid, handleChangeInput, setIsError } =
+    Validation();
+  const [isErrorSending, setIsErrorSending] = useState();
+  const handleSubmitRegister = (evt) => {
+    evt.preventDefault();
+    if (isValid) {
+      onRegister(isValue, setIsErrorSending);
     }
-
-    const values = {
-      name: isValue.name,
-      email: isValue.email,
-      password: isValue.password,
-    };
-    console.log(values);
   };
 
+  useEffect(() => {
+    isValue.email &&
+      !isValue.email.includes(".") &&
+      setIsError((prevState) => ({
+        ...prevState,
+        email: "Не корректный email",
+      }));
+  }, [isValue.email, setIsError]);
+
+  const isButtonDisabled =
+    !isValue.name ||
+    !isValue.email ||
+    !isValue.password ||
+    Boolean(isError?.name) ||
+    Boolean(isError?.email) ||
+    Boolean(isError?.password);
   return (
     <>
       <main>
@@ -30,7 +40,7 @@ export default function Register() {
               <img className="register__logo" src={logo} alt="Логотип" />
             </Link>
             <h1 className="register__title">Добро пожаловать!</h1>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmitRegister}>
               <label className="form__label">
                 Имя
                 <input
@@ -46,9 +56,10 @@ export default function Register() {
                   required
                   placeholder="Ваше имя"
                 />
-                <span className="register__error">{isError.name}</span>
+                {isError.name && (
+                  <span className="register__error">{isError.name}</span>
+                )}
               </label>
-
               <label className="form__label">
                 E-mail
                 <input
@@ -64,7 +75,9 @@ export default function Register() {
                   required
                   placeholder="Ваш email"
                 />
-                <span className="register__error">{isError.email}</span>
+                {isError.email && (
+                  <span className="register__error">{isError.email}</span>
+                )}
               </label>
 
               <label className="form__label">
@@ -82,10 +95,18 @@ export default function Register() {
                   placeholder="Ваш пароль"
                   minLength={8}
                 />
-                <span className="register__error">{isError.password}</span>
+                {isError.password && (
+                  <span className="register__error">{isError.password}</span>
+                )}
               </label>
-              <p className="form__error_text">Что-то пошло не так...</p>
-              <button className="register__button" type="submit">
+              {isErrorSending && (
+                <p className="form__error-text">Что-то пошло не так</p>
+              )}
+              <button
+                className="register__button"
+                type="submit"
+                disabled={isButtonDisabled}
+              >
                 Зарегистрироваться
               </button>
               <p className="register__subtitle">

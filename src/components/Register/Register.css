@@ -78,6 +78,10 @@
   align-items: center;
   padding-top: 0px;
 }
+.register__button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
 .input__errors {
   border: 2px solid #ee3465;
   color: red;
@@ -110,6 +114,15 @@
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+}
+.register__link:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+.register__button:disabled {
+  background-color: grey;
+  border: none;
+  cursor: not-allowed;
 }
 @media screen and (max-width: 1024px) {
   .register__logo {

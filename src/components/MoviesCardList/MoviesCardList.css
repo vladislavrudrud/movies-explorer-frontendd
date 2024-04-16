@@ -23,6 +23,19 @@
   border-radius: 6px;
   border: none;
 }
+.movies__button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+.movies__errors {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 160px;
+
+}
 @media screen and (max-width: 1279px) {
   .movies__cards {
     max-width: 768px;

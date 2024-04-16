@@ -31,7 +31,6 @@ export default function Portfolio() {
             href="https://github.com/vladislavrudrud"
             target="_blank"
             rel="noreferrer"
-
           >
             <h3 className="portfolio__subtitle">Одностраничное приложение</h3>
             <img className="portfolio__image" src={icon} alt="Иконка" />

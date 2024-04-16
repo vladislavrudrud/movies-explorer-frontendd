@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Toggle.css";
 
-export default function Toggle() {
-  const [checked, setIsChecked] = useState(false);
-  const handleChangeForm = (evt) => {
-    setIsChecked(evt.target.checked);
-  };
-
+export default function Toggle({ filter, isShortMovies }) {
   return (
     <label className="toggle">
       <div className="toggle_container">
         <input
           className="toggle__input"
           type="checkbox"
-          onChange={handleChangeForm}
-          checked={checked}
+          onChange={filter}
+          checked={isShortMovies}
         />
         <div className="toggle__switch"></div>
         <span className="toggle__span">Короткометражки</span>

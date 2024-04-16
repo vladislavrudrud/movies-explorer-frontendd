@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export default function Validation() {
   const [isValue, setIsValue] = useState({});
@@ -12,6 +12,15 @@ export default function Validation() {
     setIsError({ ...isError, [name]: input.validationMessage });
     setIsValid(input.closest("form").checkValidity());
   }
+  const resetForm = useCallback(
+    (newValues = {}, newErrors = {}, newIsValid = false) => {
+      setIsValue(newValues);
+      setIsError(newErrors);
+      setIsValid(newIsValid);
+    },
+    [setIsValue, setIsError, setIsValid]
+  );
+
   return {
     isValid,
     isError,
@@ -20,5 +29,6 @@ export default function Validation() {
     setIsValid,
     setIsError,
     setIsValue,
+    resetForm
   };
 }

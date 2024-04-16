@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import Validation from "../../utils/Validation";
 
-export default function Login() {
-  const { isError, isValue, isValid, handleChangeInput } = Validation();
+export default function Login({ onLogin }) {
+  const { isError, isValue, setIsError, handleChangeInput } = Validation();
+  const [isErrorSending, setIsErrorSending] = useState();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const values = {
-      email: isValue.email,
-      password: isValue.password,
-    };
-    console.log(values);
+  const handleSubmitLogin = (evt) => {
+    evt.preventDefault();
+    onLogin(isValue, setIsErrorSending);
   };
+  useEffect(() => {
+    isValue.email &&
+      !isValue.email.includes(".") &&
+      setIsError((prevState) => ({
+        ...prevState,
+        email: "Не корректный email",
+      }));
+  }, [isValue.email, setIsError]);
+
+  const isButtonDisabled =
+    !isValue.email ||
+    !isValue.password ||
+    Boolean(isError?.email) ||
+    Boolean(isError?.password);
 
   return (
     <>
@@ -26,7 +37,7 @@ export default function Login() {
             </Link>
             <h1 className="login__title">Рады видеть!</h1>
 
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmitLogin}>
               <label className="form__label">
                 E-mail
                 <input
@@ -59,14 +70,17 @@ export default function Login() {
                   required
                   placeholder="Ваш пароль"
                 />
-                <span className="register__error">{isError.password}</span>
+                {isError.password && (
+                  <span className="register__error">{isError.password}</span>
+                )}
               </label>
+              {isErrorSending && (
+                <p className="form__error-text">Что-то пошло не так</p>
+              )}
               <button
-                className={`login__button ${
-                  !isValid ? "form__button_disabled" : ""
-                }`}
+                className="login__button"
                 type="submit"
-                disabled={!isValid}
+                disabled={isButtonDisabled}
               >
                 Войти
               </button>

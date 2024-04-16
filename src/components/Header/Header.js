@@ -13,15 +13,16 @@ export default function Header({ isLogged, isDark }) {
   };
 
   return (
-    <header
-      className={`header ${isDark ? "header_blue" : ""}`}
-      id="header"
-    >
+    <header className={`header ${isDark ? "header_blue" : ""}`} id="header">
       <div className={`header__container`}>
         <Link to="/" className="header__logo">
           <img src={logo} alt="Логотип" />
         </Link>
-        <div className="header__button_container">
+        <div
+          className={`header__button_container ${
+            isLogged ? "header__btn-container_blok" : ""
+          }`}
+        >
           {isLogged ? (
             <>
               <Navigation isOpen={isMenuOpen} onClose={toggleMenu} />

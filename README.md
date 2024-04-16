@@ -1,2 +1,3 @@
-Этап 3: верстка и JSX
-Макет: dark-4
+https://github.com/vladislavrudrud/movies-explorer-frontendd/pull/2
+kolos.nomoredomainswork.ru
+

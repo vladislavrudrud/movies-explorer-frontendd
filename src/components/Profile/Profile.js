@@ -8,17 +8,15 @@ export default function Profile({ onLogout, handleProfile }) {
     Validation();
   const currentUser = useContext(CurrentUserContext);
   const [isErrorSending, setIsErrorSending] = useState();
-  const [formData, setFormData] = useState({
-    changed: false,
-    updated: false,
-  });
-  const handleSubmitProfile = (evt) => {
-    handleProfile(isValue, setIsErrorSending);
-    setFormData({
-      changed: false,
-      updated: true,
-    });
-    evt.preventDefault();
+  const [isDataChanged, setIsDataChanged] = useState(false);
+  const [isDataUpdated, setIsDataUpdated] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    handleProfile(isValue, setIsErrorSending, setIsDataUpdated);
+  
+    setIsDataChanged(false);
   };
   useEffect(() => {
     isValue.email &&
@@ -37,10 +35,8 @@ export default function Profile({ onLogout, handleProfile }) {
 
   const handleInputChange = (event) => {
     handleChangeInput(event);
-    setFormData({
-      changed: true,
-      updated: false,
-    });
+    setIsDataChanged(true);
+    setIsDataUpdated(false);
   };
 
   const isButtonDisabled =
@@ -56,7 +52,7 @@ export default function Profile({ onLogout, handleProfile }) {
         <section className="profile">
           <h1 className="profile__title">Привет, {currentUser.name}!</h1>
 
-          <form className="profile__form" onSubmit={handleSubmitProfile}>
+          <form className="profile__form" onSubmit={handleSubmit}>
             <label
               className={`profile__field profile__field_border ${
                 isError.name ? "input__errors" : ""
@@ -110,7 +106,7 @@ export default function Profile({ onLogout, handleProfile }) {
                 type="submit"
                 disabled={isButtonDisabled}
               >
-                {formData.updated ? "Данные успешно изменены" : "Редактировать"}
+                {isDataUpdated ? "Данные успешно изменены" : "Редактировать"}
               </button>
               <button
                 className="profile__logout"

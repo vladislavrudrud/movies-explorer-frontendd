@@ -42,7 +42,6 @@ export default function Movies({ handleSave, savedMovies, cardDelete }) {
     setIsShortMovies(!isShortMovies);
     if (!isShortMovies) {
       if (getShortDurationMovies(isInitialMovies).length === 0) {
-        // setIsLoading(true);
         setIsFilteredMovies(getShortDurationMovies(isInitialMovies));
       } else {
         setIsFilteredMovies(getShortDurationMovies(isInitialMovies));
@@ -93,13 +92,6 @@ export default function Movies({ handleSave, savedMovies, cardDelete }) {
     }
   }
 
-  // useEffect(() => {
-  //     if (localStorage.getItem('shortMovies') === 'true') {
-  //         setIsShortMovies(true);
-  //     } else {
-  //         setIsShortMovies(false);
-  //     }
-  // }, []);
   useEffect(() => {
     const storedShortMovies = localStorage.getItem("shortMovies");
     setIsShortMovies(storedShortMovies === "true");
@@ -118,17 +110,6 @@ export default function Movies({ handleSave, savedMovies, cardDelete }) {
     }
   }, []);
 
-  // useEffect(() => {
-  //     if (localStorage.getItem('movieSearch')) {
-  //         if (filteredMovies.length === 0) {
-  //             setIsNotFound(true);
-  //         } else {
-  //             setIsNotFound(false);
-  //         }
-  //     } else {
-  //         setIsNotFound(false);
-  //     }
-  // }, [filteredMovies]);
   useEffect(() => {
     if (localStorage.getItem("movieSearch")) {
       setIsNotFound(isFilteredMovies.length === 0);

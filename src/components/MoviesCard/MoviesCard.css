@@ -24,7 +24,7 @@
   color: #ffffff;
 }
 .movie__duration {
-  margin: 18px 18px 18px 0;
+  margin: 18px 18p 18px auto;
   font-family: "Inter";
   font-size: 13px;
   line-height: 18px;

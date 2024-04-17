@@ -90,11 +90,12 @@ function App() {
       });
   }
 
-  function handleUpdateProfile(user, returnError) {
+  function handleUpdateProfile(user, returnError, setIsDataUpdated) {
     mainApi
       .setProfile(user)
       .then(() => {
         setCurrentUser({ ...currentUser, name: user.name, email: user.email });
+        setIsDataUpdated(true);
       })
       .catch((err) => {
         console.log(err);

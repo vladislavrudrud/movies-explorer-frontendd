@@ -1,3 +1,10 @@
+# movies-explorer-frontendd
+4 этап
+Ссылка на пул реквест:
+```
 https://github.com/vladislavrudrud/movies-explorer-frontendd/pull/2
-kolos.nomoredomainswork.ru
-
+```
+Ссылка на задеплоенный на сервере проект:
+```
+https://kolos.nomoredomainswork.ru
+```
